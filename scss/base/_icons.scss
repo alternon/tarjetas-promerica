@@ -1,0 +1,63 @@
+@import "utilities/mixins";
+@import "utilities/animations";
+
+.icono:before {
+    background: url(../img/svg/filtro/sprite.svg) no-repeat;
+}
+
+.icono {
+    position: relative;
+}
+
+.icono {
+    &::before {
+        content: "";
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.icono-puntos:before{width: 70px;height: 70px;background-size: 200%;background-position: -10%  -1.291512915129151%}
+.icono-puntos:hover:before, .active .icono-puntos:before, .icono-puntos-active:before{width: 70px;height: 70px;background-size: 200%;background-position: 90% -1.291512915129151%;@include animation('fade 0.5s;');}
+
+.icono-cashback:before{width: 70px;height: 70px;background-size: 200%;background-position: -10% 12.9151291512915%}
+.icono-cashback:hover:before, .active .icono-cashback:before,.icono-cashback-active:before{width: 70px;height: 70px;background-size: 200%;background-position: 90% 12.9151291512915%;@include animation('fade 0.5s;');}
+
+.icono-millas:before{width: 70px;height: 70px;background-size: 200%;background-position: -1.42857142857143% 27.8597786%}
+.icono-millas:hover:before, .active .icono-millas:before,.icono-millas-active:before{width: 70px;height: 70px;background-size: 200%;background-position: 98.5714285714286% 27.8597786%;@include animation('fade 0.5s;');}
+
+.icono-empresa:before{width: 70px;height: 70px;background-size: 200%;background-position: -10% 42%}
+.icono-empresa:hover:before, .active .icono-empresa:before,.icono-empresa-active:before{width: 70px;height: 70px;background-size: 200%;background-position: 90% 42%;@include animation('fade 0.5s;');}
+
+.icono-promociones:before{width: 70px;height: 70px;background-size: 200%;background-position: -18.5714285714286% 57.5%}
+.icono-promociones:hover:before, .active .icono-promociones:before,.icono-promociones-active:before{width: 70px;height: 70px;background-size: 200%;background-position: 81.4285714285714% 57.5%;@include animation('fade 0.5s;');}
+
+.icono-todas:before{width: 70px;height: 70px;background-size: 200%;background-position: -10%  71.5%}
+.icono-todas:hover:before, .active .icono-todas:before{width: 70px;height: 70px;background-size: 200%;background-position: 90% 71.5%;@include animation('fade 0.5s;');}
+
+.icono-cerrar:before, .box-more-info:before{width: 24px;height: 24px;background-size: 600%;background-position: 0% 81.092251%}
+.icono-flecha:before{width: 24px;height: 14px;background-position: -5% 79.5202952%}
+.icono-flecha-atras:before{width: 24px;height: 24px;background-size: 600%;background-position: 0 88.35%}
+.icono-vermas:before{width: 24px;height: 24px;background-size: 600%;background-position: 0.2% 93%;float: right;margin: 0 0 0 10px;}
+.icono-vermas-grande:before{width: 30px;height: 30px;background-size: 450%;background-position: -0.4% 100.1%;float: right;margin: 0 0 0 10px;}
+
+
+
+
+.icono-slider {
+    position: relative;
+
+    &:before {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        background: url(../img/svg/slider/sprite.svg) no-repeat;
+        width: 116px;
+        height: 107px;
+    }
+}
+
+.icono-pagos:before {background-position: 0 0;}
+.icono-pagos-verde:before, .active .icono-pagos:before {background-position: 0 33.333333%; @include animation('fade 0.5s;');}
+.icono-puntopromerica:before {background-position: 0 66.666666%;}
+.icono-puntopromerica-verde:before,.active .icono-puntopromerica:before {background-position: 0 100%; @include animation('fade 0.5s;');}

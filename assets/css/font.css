@@ -1,0 +1,228 @@
+﻿body {  
+    font-family: museosans,Tahoma;
+	font-size: 16px;
+
+}
+aside .btn {
+    font-size: 12px;
+}
+
+#main_nav a, #main_nav .dropdown button {
+    margin-right: 25px;
+}
+
+#main_nav #enlinea_btn {
+     padding-right: 3px; 
+     padding-left: 3px; 
+     font-size: 15px;
+  }
+
+#main_nav .menu ul a {
+    font-size: 15px;
+}
+
+h2 {
+    
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 17px;
+}
+
+.btn, .tarifarios .panel-body a {
+    font-size: 13px;
+}
+
+/*100*/
+@font-face {
+    font-family: museosans;
+    src: url(../css/fonts/museo-sans/museosans-100-webfont.eot);
+    src: url(../css/fonts/museo-sans/museosans-100-webfont.eot?#iefix) format('embedded-opentype'), url(../css/fonts/museo-sans/museosans-100-webfont.woff) format('woff'), url(../css/fonts/museo-sans/museosans-100-webfont.ttf) format('truetype'), url(../css/fonts/museo-sans/museosans-100-webfont.svg#museosansregular) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: museosans;
+    src: url(../css/fonts/museo-sans/museosans-100italic-webfont.eot);
+    src: url(../css/fonts/museo-sans/museosans-100italic-webfont.eot?#iefix) format('embedded-opentype'), url(../css/fonts/museo-sans/museosans-100italic-webfont.woff) format('woff'), url(../css/fonts/museo-sans/museosans-100italic-webfont.ttf) format('truetype'), url(../css/fonts/museo-sans/museosans-100italic-webfont.svg#museosansitalic) format('svg');
+    font-weight: 100;
+    font-style: italic
+}
+
+/*300*/
+@font-face {
+    font-family: museosans;
+    src: url(../css/fonts/museo-sans/museosans-300-webfont.eot);
+    src: url(../css/fonts/museo-sans/museosans-300-webfont.eot?#iefix) format('embedded-opentype'), url(../css/fonts/museo-sans/museosans-300-webfont.woff) format('woff'), url(../css/fonts/museo-sans/museosans-300-webfont.ttf) format('truetype'), url(../css/fonts/museo-sans/museosans-300-webfont.svg#museosansregular) format('svg');
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: museosans;
+    src: url(../css/fonts/museo-sans/museosans-300italic-webfont.eot);
+    src: url(../css/fonts/museo-sans/museosans-300italic-webfont.eot?#iefix) format('embedded-opentype'), url(../css/fonts/museo-sans/museosans-300italic-webfont.woff) format('woff'), url(../css/fonts/museo-sans/museosans-300italic-webfont.ttf) format('truetype'), url(../css/fonts/museo-sans/museosans-300italic-webfont.svg#museosansitalic) format('svg');
+    font-weight: 300;
+    font-style: italic
+}
+
+/*500*/
+@font-face {
+    font-family: museosans;
+    src: url(../css/fonts/museo-sans/museosans-500-webfont.eot);
+    src: url(../css/fonts/museo-sans/museosans-500-webfont.eot?#iefix) format('embedded-opentype'), url(../css/fonts/museo-sans/museosans-500-webfont.woff) format('woff'), url(../css/fonts/museo-sans/museosans-500-webfont.ttf) format('truetype'), url(../css/fonts/museo-sans/museosans-500-webfont.svg#museosansregular) format('svg');
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: museosans;
+    src: url(../css/fonts/museo-sans/museosans-500italic-webfont.eot);
+    src: url(../css/fonts/museo-sans/museosans-500italic-webfont.eot?#iefix) format('embedded-opentype'), url(../css/fonts/museo-sans/museosans-500italic-webfont.woff) format('woff'), url(../css/fonts/museo-sans/museosans-500italic-webfont.ttf) format('truetype'), url(../css/fonts/museo-sans/museosans-500italic-webfont.svg#museosansitalic) format('svg');
+    font-weight: 500;
+    font-style: italic
+}
+
+/*700*/
+@font-face {
+    font-family: museosans;
+    src: url(../css/fonts/museo-sans/museosans-700-webfont.eot);
+    src: url(../css/fonts/museo-sans/museosans-700-webfont.eot?#iefix) format('embedded-opentype'), url(../css/fonts/museo-sans/museosans-700-webfont.woff) format('woff'), url(../css/fonts/museo-sans/museosans-700-webfont.ttf) format('truetype'), url(../css/fonts/museo-sans/museosans-700-webfont.svg#museosansregular) format('svg');
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: museosans;
+    src: url(../css/fonts/museo-sans/museosans-700italic-webfont.eot);
+    src: url(../css/fonts/museo-sans/museosans-700italic-webfont.eot?#iefix) format('embedded-opentype'), url(../css/fonts/museo-sans/museosans-700italic-webfont.woff) format('woff'), url(../css/fonts/museo-sans/museosans-700italic-webfont.ttf) format('truetype'), url(../css/fonts/museo-sans/museosans-700italic-webfont.svg#museosansitalic) format('svg');
+    font-weight: 700;
+    font-style: italic
+}
+
+/*900*/
+@font-face {
+    font-family: museosans;
+    src: url(../css/fonts/museo-sans/museosans-900-webfont.eot);
+    src: url(../css/fonts/museo-sans/museosans-900-webfont.eot?#iefix) format('embedded-opentype'), url(../css/fonts/museo-sans/museosans-900-webfont.woff) format('woff'), url(../css/fonts/museo-sans/museosans-900-webfont.ttf) format('truetype'), url(../css/fonts/museo-sans/museosans-900-webfont.svg#museosansregular) format('svg');
+    font-weight: 900;
+    font-style: normal
+}
+
+.umb-grid {
+    width: 100%;
+    margin-left: auto;
+}
+
+
+.columna812Grid .umb-grid .grid-section {
+    width: 100%;
+    margin: auto;
+}
+
+.columna1212Grid .umb-grid .grid-section {
+    width: 75%;
+    margin: auto;
+}
+
+.grid-section .container {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.grid-section .col-md-6 img {
+    vertical-align: middle;
+    padding-top: 30px;
+}
+
+.grid-section .col-md-6 p {
+    margin: 5px 5px 5px 5px;
+    padding-left: 20px;
+}
+
+.grid-section .col-md-12 p {
+    margin: 1px 1px 1px 1px;
+    text-align: justify;
+}
+
+
+.grid-section .col-md-12 img {
+    max-width: 700px !important;
+}
+
+@media all and (max-width:730px) {
+
+.umb-grid
+
+{
+    width: 100%;
+    margin: auto;
+}
+
+.umb-grid .col-md-12 {
+    padding: 0 0 0 0;
+}
+
+.grid-section .container {
+    width: 100%;
+    padding: 0 0 0 0;
+}
+
+.grid-section .col-md-6 img {
+    padding: 1px 1px 1px 1px;
+    display: table-cell;
+    margin: auto;
+}
+
+.grid-section .col-md-6 p {
+    margin: 2px 2px 2px 2px;
+    padding-left: 5px;
+    padding-top: 25px;
+}
+
+.grid-section .col-md-12 p {
+    margin: 1px 1px 1px 1px;
+    width: 100%;
+    text-align: left;
+}
+
+
+
+.columna812Grid .umb-grid .grid-section {
+    width: 100%;
+    margin: auto;
+}
+
+.columna1212Grid .umb-grid .grid-section {
+    width: 75%;
+    margin: auto;
+}
+
+.columna1212Grid .grid-section  .col-md-12 img {
+    max-width: 100% !important;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.columna812Grid .grid-section  .col-md-12 img {
+    max-width: 100% !important;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+}
+
+@media (min-width: 992px) {
+    .col-md-6 {
+        width: 40%;
+    }
+}
+.credit_form input[type=checkbox]{
+    width: 100px;
+}
+
+
+
+

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/vendor/normalize.css"/>
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/vendor/jquery.mCustomScrollbar.min.css"/>
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" href="assets/css/main.min.css" />
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap-select.min.css"/>
+    <link rel="stylesheet" href="assets/css/font.css">
+
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<!--     <header>
+
+    </header> -->
+    <main class="block-tarjetas">
+        <div class="jumbotron banner-tarjetas">
+            <div class="container">
+                <div class="row aligned-row aligned-row-items">
+                    <div class="col-md-5 col-md-offset-1 col-xs-12">
+                        <img src="img/visacb-dic2017.png" alt="Tarjetas de Crédito Promérica">
+                    </div>
+                    <div class="col-md-5 col-xs-12">
+                        <h1 class="titulo-tarjeta">Tenemos una <span>Tarjeta de Crédito</span> para ti</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="box box-descubre">
+                        <p>Nosotros te ayudamos a descubrir<br>la <span>tarjeta perfecta</span> para ti</p>
+                        <a class="btn btn-default" href="javascript:void(0);">Descúbre tu tarjeta</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="block-filtro-tarjetas">
+                        <button class="btn btn-link btn-filtro" type="button" data-toggle="collapse" data-target="#block-categorias-tdc" aria-expanded="true" aria-controls="block-categorias-tdc">Quiero mi tarjeta para <span id="txt-categoria" class="txt-categoria"></span><i class="icon-flecha"></i></button>
+                        <div class="block-categorias-tdc collapse in" id="block-categorias-tdc">
+                            <ul>
+                                <li><a class="categoria icono icono-puntos" href="javascript:void(0);" data-target="puntos">Ganar Puntos</a></li>
+                                <li><a class="categoria icono icono-cashback" href="javascript:void(0);" data-target="cashback">Obtener Cash Back</a></li>
+                                <li><a class="categoria icono icono-millas" href="javascript:void(0);" data-target="millas">Ganar Millas</a></li>
+                                <li><a class="categoria icono icono-empresa" href="javascript:void(0);" data-target="empresa">Mi Empresa</a></li>
+                                <li><a class="categoria icono icono-promociones" href="javascript:void(0);" data-target="promociones">Promociones</a></li>
+                                <li><a class="categoria icono icono-todas" href="javascript:void(0);" data-target="todas">Ver todas</a></li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div id="puntos" class="box box-filtro active">
+                                    <i class="icono icono-puntos-active"></i>
+                                    <h3>Programa <span>Puntos Promerica</span></h3>
+                                    <p>Compra y paga con tus Puntos Promerica en los miles de establecimientos afiliados a VISANET, además podrás acreditarlos al saldo de tu tarjeta o bien transfiérelos a Millas Life Miles.</p>
+                                </div>
+                                <div id="cashback" class="box box-filtro">
+                                    <i class="icono icono-cashback-active"></i>
+                                    <h3>Programa <span>Cash Back</span></h3>
+                                    <p>Compra y paga con tus Puntos Promerica en los miles de establecimientos afiliados a VISANET, además podrás acreditarlos al saldo de tu tarjeta o bien transfiérelos a Millas Life Miles.</p>
+                                </div>
+                                <div id="millas" class="box box-filtro">
+                                    <i class="icono icono-millas-active"></i>
+                                    <h3>Programa <span>Free Spirit</span></h3>
+                                    <p>Compra y paga con tus Puntos Promerica en los miles de establecimientos afiliados a VISANET, además podrás acreditarlos al saldo de tu tarjeta o bien transfiérelos a Millas Life Miles.</p>
+                                </div>
+                                <div id="empresa" class="box box-filtro">
+                                    <i class="icono icono-puntos-active"></i>
+                                    <h3>Programa <span>Puntos Promerica</span></h3>
+                                    <p>Compra y paga con tus Puntos Promerica en los miles de establecimientos afiliados a VISANET, además podrás acreditarlos al saldo de tu tarjeta o bien transfiérelos a Millas Life Miles.</p>
+                                </div>
+                                <div id="promociones" class="box box-filtro">
+                                    <i class="icono icono-promociones-active"></i>
+                                    <h3>Programa <span>Promociones</span></h3>
+                                    <p>Compra y paga con tus Puntos Promerica en los miles de establecimientos afiliados a VISANET, además podrás acreditarlos al saldo de tu tarjeta o bien transfiérelos a Millas Life Miles.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row container-tarjetas">
+                <div class="col-md-4">
+                    <div class="box box-tarjetas">
+                        <div class="tag solicitada" data-box-tag="Más solicitada"></div>
+                        <img class="tarjeta" src="img/tarjetas/premiaclasica1.png" alt="Tarjeta Premia Clásica">
+                        <div class="box-info">
+                            <div class="box-info-txt">
+                                <h3>Premia Clásica</h3>
+                                <p>Por cada US$1 o su equivalente en  Quetzales de compras acumuladas:</p>
+                                <ul>
+                                    <li>1 Punto Promerica en compras locales</li>
+                                    <li>1 Punto Promerica en pagos automáticos</li>
+                                </ul>
+                            </div>
+                            <a class="btn btn-default" href="javascript:void(0);">Solicítala</a>
+                            <a class="btn btn-link icono icono-vermas vermas">Ver más</a>
+                            <div class="box-more-info">
+                                <i class="icono icono-puntos-active"></i>
+                                <h4>Programa <span>Puntos Promerica</span></h4>
+                                <p>Compra y paga con tus <b>Puntos Promerica</b> en los miles de establecimientos afiliados a <b>VISANET</b>, además podrás acreditarlos al saldo de tu tarjeta o bien transfiérelos a <b>Millas Life Miles</b>.</p>
+                                <a class="btn btn-default" href="javascript:void(0);">Solicítala</a>
+                                <a class="btn btn-link icono icono-vermas" href="tarjetas/clasica">Quiero más información</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="box box-tarjetas">
+                        <div class="tag buscada" data-box-tag="Más buscada"></div>
+                        <img class="tarjeta" src="img/tarjetas/Premiaoro.png" alt="Tarjeta Premia Oro">
+                        <div class="box-info">
+                            <div class="box-info-txt">
+                                <h3>Premia Oro</h3>
+                                <p>Por cada US$1 o su equivalente en  Quetzales de compras acumuladas:</p>
+                                <ul>
+                                    <li>1 Punto Promerica en compras locales</li>
+                                    <li>1 Punto Promerica en pagos automáticos</li>
+                                </ul>
+                            </div>
+                            <a class="btn btn-default" href="javascript:void(0);">Solicítala</a>
+                            <a class="btn btn-link icono icono-vermas vermas">Ver más</a>
+                            <div class="box-more-info">
+                                <i class="icono icono-puntos-active"></i>
+                                <h4>Programa <span>Puntos Promerica</span></h4>
+                                <p>Compra y paga con tus <b>Puntos Promerica</b> en los miles de establecimientos afiliados a <b>VISANET</b>, además podrás acreditarlos al saldo de tu tarjeta o bien transfiérelos a <b>Millas Life Miles</b>.</p>
+                                <a class="btn btn-default" href="javascript:void(0);">Solicítala</a>
+                                <a class="btn btn-link icono icono-vermas" href="tarjetas/clasica">Quiero más información</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                    <div class="box box-tarjetas">
+                        <div class="tag nueva" data-box-tag="Nueva tarjeta"></div>
+                        <img class="tarjeta" src="img/tarjetas/premiaplatinum_visa3.png" alt="Tarjeta Cash Back Visa">
+                        <div class="box-info">
+                            <div class="box-info-txt">
+                                <h3>Premia Platinum</h3>
+                                <p>Por cada US$1 o su equivalente en  Quetzales de compras acumuladas:</p>
+                                <ul>
+                                    <li>2 Punto Promerica en restaurantes</li>
+                                    <li>1 Punto Promerica en el resto de comercios y pagos automaticos</li>
+                                </ul>
+                            </div>
+                            <a class="btn btn-default" href="javascript:void(0);">Solicítala</a>
+                            <a class="btn btn-link icono icono-vermas vermas">Ver más</a>
+                            <div class="box-more-info">
+                                <i class="icono icono-puntos-active"></i>
+                                <h4>Programa <span>Puntos Promerica</span></h4>
+                                <p>Compra y paga con tus <b>Puntos Promerica</b> en los miles de establecimientos afiliados a <b>VISANET</b>, además podrás acreditarlos al saldo de tu tarjeta o bien transfiérelos a <b>Millas Life Miles</b>.</p>
+                                <a class="btn btn-default" href="javascript:void(0);">Solicítala</a>
+                                <a class="btn btn-link icono icono-vermas" href="tarjetas/clasica">Quiero más información</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="box box-tarjetas">
+                        <img class="tarjeta" src="img/tarjetas/premiaplatinum_visa3.png" alt="Tarjeta Premia Clásica">
+                        <div class="box-info">
+                            <div class="box-info-txt">
+                                <h3>Premia Signature</h3>
+                                <p>Por cada US$1 o su equivalente en  Quetzales de compras acumuladas:</p>
+                                <ul>
+                                    <li>1 Punto Promerica en compras locales</li>
+                                    <li>1 Punto Promerica en pagos automáticos</li>
+                                </ul>
+                            </div>
+                            <a class="btn btn-default" href="javascript:void(0);">Solicítala</a>
+                            <a class="btn btn-link icono icono-vermas vermas">Ver más</a>
+                            <div class="box-more-info">
+                                <i class="icono icono-puntos-active"></i>
+                                <h4>Programa <span>Puntos Promerica</span></h4>
+                                <p>Compra y paga con tus <b>Puntos Promerica</b> en los miles de establecimientos afiliados a <b>VISANET</b>, además podrás acreditarlos al saldo de tu tarjeta o bien transfiérelos a <b>Millas Life Miles</b>.</p>
+                                <a class="btn btn-default" href="javascript:void(0);">Solicítala</a>
+                                <a class="btn btn-link icono icono-vermas" href="tarjetas/clasica">Quiero más información</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="box box-tarjetas">
+                        <img class="tarjeta" src="img/tarjetas/premiasignature.png" alt="Tarjeta Premia Clásica">
+                        <div class="box-info">
+                            <div class="box-info-txt">
+                                <h3>LifeMiles Platinum</h3>
+                                <p>Por cada US$1 o su equivalente en  Quetzales de compras acumuladas:</p>
+                                <ul>
+                                    <li>1 Punto Promerica en compras locales</li>
+                                    <li>1 Punto Promerica en pagos automáticos</li>
+                                </ul>
+                            </div>
+                            <a class="btn btn-default" href="javascript:void(0);">Solicítala</a>
+                            <a class="btn btn-link icono icono-vermas vermas">Ver más</a>
+                            <div class="box-more-info">
+                                <i class="icono icono-puntos-active"></i>
+                                <h4>Programa <span>Puntos Promerica</span></h4>
+                                <p>Compra y paga con tus <b>Puntos Promerica</b> en los miles de establecimientos afiliados a <b>VISANET</b>, además podrás acreditarlos al saldo de tu tarjeta o bien transfiérelos a <b>Millas Life Miles</b>.</p>
+                                <a class="btn btn-default" href="javascript:void(0);">Solicítala</a>
+                                <a class="btn btn-link icono icono-vermas" href="tarjetas/clasica">Quiero más información</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="box box-tarjetas">
+                        <img class="tarjeta" src="img/tarjetas/lifemiles_platinum.png" alt="Tarjeta Premia Clásica">
+                        <div class="box-info">
+                            <div class="box-info-txt">
+                                <h3>LifeMiles Platinum</h3>
+                                <p>Por cada US$1 o su equivalente en  Quetzales de compras acumuladas:</p>
+                                <ul>
+                                    <li>1 Punto Promerica en compras locales</li>
+                                    <li>1 Punto Promerica en pagos automáticos</li>
+                                </ul>
+                            </div>
+                            <a class="btn btn-default" href="javascript:void(0);">Solicítala</a>
+                            <a class="btn btn-link icono icono-vermas vermas">Ver más</a>
+                            <div class="box-more-info">
+                                <i class="icono icono-puntos-active"></i>
+                                <h4>Programa <span>Puntos Promerica</span></h4>
+                                <p>Compra y paga con tus <b>Puntos Promerica</b> en los miles de establecimientos afiliados a <b>VISANET</b>, además podrás acreditarlos al saldo de tu tarjeta o bien transfiérelos a <b>Millas Life Miles</b>.</p>
+                                <a class="btn btn-default" href="javascript:void(0);">Solicítala</a>
+                                <a class="btn btn-link icono icono-vermas" href="tarjetas/clasica">Quiero más información</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row block-mas-tarjetas">
+                <div class="col-12">
+                    <button class="btn btn-link icono icono-vermas-grande">Ver más tarjetas</button>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron banner-descubre-tarjeta">
+            <div class="container">
+                <div class="row aligned-row aligned-row-items">
+                    <div class="col-md-8 col-xs-12">
+                        <h3>¿Aún no te decides?<span>¡Nosotros te ayudamos!</span></h3>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <a class="btn btn-default" href="javascript:void(0);">Descúbre tu tarjeta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row block-promociones-slider">
+                <div class="col-12">
+                    <h3>Todas las tarjetas te brindan</h3>
+                    <ul class="promociones-slider-iconos">
+                        <li class="active">
+                            <a href="#slide1">
+                                <h4>Club <span>Promerica</span></h4>
+                                <i class="icono-slider icono-pagos"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#slide2">
+                                <h4>Otros <span>Beneficios</span></h4>
+                                <i class="icono-slider icono-puntopromerica"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="promociones-slider-texto tab-content">
+                        <div id="slide1" class="slide tab-pane fade in active">
+                            <div class="col-12">
+                                <ul>
+                                    <li>Cobertura del 100% de límite de crédito contra robo, fraude y/o extravío.</li>
+                                    <li>Monitoreo 24/7 local e internacional al reportar tu viaje.</li>
+                                    <li>Servicio NotificaMe con notificaciones sms a tu celular, por cada transacción.</li>
+                                    <li>Cobertura para tarjeta titular y adicionales.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="slide2" class="slide tab-pane fade">
+                            <div class="col-12">
+                                <ul>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta, dolor ut.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque orci nisl, dictum nec consectetur.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron container-promociones-footer">
+            <div class="row block-promociones-footer container">
+                <h3>Si ya tienes tu Tarjeta de Crédito, esto te puede interesar</h3>
+                <div class="col-12">
+                    <div class="box box-promociones-footer">
+                        <div class="row">
+                            <div class="col-md-6 item">
+                                <img src="img/svg/Iconosegundacuenta.svg">
+                                <p>¿Necesitas una segunda<br>cuenta? <a class="btn btn-default" href="javascript:void(0);">Adquiérala</a></p>
+                            </div>
+                            <div class="col-md-6 item">
+                                <img src="img/svg/iconotarjetaadicional.svg">
+                                <p>¿Necesitas una tarjeta<br>adicional? <a class="btn btn-default" href="javascript:void(0);">Solicítela</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-md-4 items-promociones">
+                            <img src="img/svg/Iconopromociones2.svg">
+                            <p>Disfruta todas las <a href="javascript:void(0);" class="link">Promociones</a><br> que tiene para ti</p>
+                        </div>
+                        <div class="col-md-4 items-promociones">
+                            <img src="img/svg/Iconoactivatarjetas.svg">
+                            <p>¿Ya estrenaste tu Tarjeta?<br><a href="javascript:void(0);" class="link">Actívala fácil y rápido</a></p>
+                        </div>
+                        <div class="col-md-4 items-promociones">
+                            <img src="img/svg/telefono.svg">
+                            <p>¿Sucedió algo con tu Tarjeta?<br><a href="javascript:void(0);" class="link">Contáctanos</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script type="text/javascript" src="assets/js/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jquery.validate.min.js" async></script>
+    <script type="text/javascript" src="assets/js/vendor/jquery.formatCurrency-1.4.0.min.js" async></script>
+    <script type="text/javascript" src="assets/js/vendor/autosize.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jplist.core.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jplist.bootstrap-filter-dropdown.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jplist.bootstrap-pagination-bundle.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/bootstrap-select.min.js"></script>
+    
+    <!-- GENERAL -->
+    <script type="text/javascript" src="assets/js/main.min.js" async></script>
+    
+    <script type="text/javascript" src="assets/js/cookies.js"></script>
+    <script type="text/javascript" src="assets/js/site.js" async></script>
+<!--     <script type="text/javascript" src="assets/js/simuladores.js" async></script> -->
+
+
+    <script src="js/slick.min.js"></script>
+    <script src="js/enquire.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

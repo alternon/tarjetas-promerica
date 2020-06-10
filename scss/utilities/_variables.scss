@@ -1,0 +1,42 @@
+
+
+$color-primario: (
+    verde-oscuro: #00693C,
+    verde: #69BE28,
+    verde-claro: rgba(105, 190, 40, 0.8)
+);
+
+$color-adicional: (
+    naranja: #FF5900,
+    rojo: #FC312B
+);
+
+$color-productos: (
+    azul-oscuro: #002C77,
+    azul: rgb(0, 8, 22),
+    amarillo: #FFA408,
+    azul-claro: #63CECA,
+    rosa: #EA5084,
+    verde-claro: #BED600,
+    morado: #80379b
+);
+
+$color-grises: (
+    negro: #000000,
+    gris-nivel6: #1E1E1E,
+    gris-nivel5: #4A4A4A,
+    gris-nivel4: #808080,
+    gris-nivel3: #AEAEAE,
+    gris-nivel2: #D8D8D8,
+    gris-nivel1: #FAFAFA,
+    blanco: #FFFFFF
+);
+
+$color-box: (
+    borde: #E6E6E6,
+    sombra: #DDDDDD
+);
+
+$screen-lg-min: 1200px;
+$screen-md-min: 992px;
+$screen-sm-min: 768px;

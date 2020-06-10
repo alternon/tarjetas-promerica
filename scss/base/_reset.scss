@@ -1,0 +1,59 @@
+@import "utilities/functions";
+body {
+    background: color-grises(gris-nivel1) !important;
+}
+
+.btn {
+    text-transform: none;
+    font-weight: 500;
+    &:focus{
+        border: none !important;
+    }
+
+    &:active{
+        border: none !important;
+    }
+}
+
+a:focus, a:hover {
+    text-decoration: none;
+}   
+
+.row {
+    .row{
+        margin: 0;
+    }
+}
+
+.col-md-6 {
+    width: 50%;
+}
+
+.slick-dots {
+    text-align: center !important;
+    padding: 10px !important;
+
+    li {
+        padding-left: 0 !important;
+        text-indent: 0 !important;
+
+        &.slick-active {
+            button {
+                &:before{
+                    opacity: 1;
+                    color: color-primario(verde-oscuro);
+                }
+            }
+        }
+        &:before {
+            content: none !important;
+        }
+        button {
+            &:before {
+                font-size: 10px;
+                opacity: 1;
+                color: color-grises(gris-nivel3);
+            }
+        }
+    }
+}

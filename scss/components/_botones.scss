@@ -1,0 +1,99 @@
+
+@import "utilities/functions";
+.btn-default {
+    font-family: "MuseoSans-500";
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    line-height: 37px;
+    color: color-grises(blanco);
+    background-color: color-primario(verde);
+    outline: none;
+    min-width: 150px;
+    background-position: center;
+    transition: background 0.8s;
+    padding: 0;
+
+    &:hover {
+      background: color-primario(verde-claro) radial-gradient(circle, transparent 1%, color-primario(verde-claro) 1%) center/15000%;
+      color: color-grises(blanco);
+    }
+
+    &:active {
+      background-color: color-primario(verde-claro);
+      background-size: 100%;
+      transition: background 0s;
+      color: color-grises(blanco);
+
+      &:focus {
+        color: color-grises(blanco);
+      }
+      
+    }
+
+    &:focus {
+        color: color-grises(blanco);
+        background-color: color-primario(verde);
+        border-color: transparent;
+        outline: none;
+    }
+}
+
+.btn-link {
+  font-family: "MuseoSans-500";
+  font-size: 17px;
+  color: color-grises(gris-nivel4);
+  line-height: 24px;
+  outline: none;
+  padding: 0;
+  margin: 36px 0 0 0;
+  border: none;
+
+  &:hover, &:focus {
+    text-decoration: none;
+    color: color-grises(gris-nivel4);
+  }
+
+  &.icono-flecha-atras {
+    font-family: "MuseoSans-700";
+    font-size: 14px;
+    color: color-primario(verde-oscuro);
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 24px;
+    text-decoration: underline;
+
+    &:hover {
+      color: color-primario(verde-oscuro);
+      text-decoration: underline;
+    }
+
+    &:before {
+      float: left;
+      margin: 0 8px 0 0;
+    }
+  }
+}
+
+
+.btn-filtro {
+  position: relative;
+  margin: 0;
+
+  .icon-flecha {
+    background-image: url(../img/svg/icons/flecha-sprite.svg);
+    width: 24px;
+    height: 14px;
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -50%);
+    background-repeat: no-repeat;
+    @include animation('sprite-backward 400ms steps(30) forwards;');
+  }
+
+  &.collapsed {
+    .icon-flecha {
+      @include animation('sprite-forward 400ms steps(30) forwards;');
+    }
+  }
+}

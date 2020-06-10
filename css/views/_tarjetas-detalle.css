@@ -1,0 +1,109 @@
+@charset "UTF-8";
+.block-tarjetas-detalle {
+  background: color-grises(blanco); }
+  .block-tarjetas-detalle .icono-flecha-atras {
+    font-family: "MuseoSans-700";
+    font-size: 14px;
+    color: color-primario(verde-oscuro);
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 24px;
+    text-decoration: underline; }
+    .block-tarjetas-detalle .icono-flecha-atras:hover {
+      color: color-primario(verde-oscuro);
+      text-decoration: underline; }
+    .block-tarjetas-detalle .icono-flecha-atras:before {
+      float: left;
+      margin: 0 8px 0 0; }
+  .block-tarjetas-detalle ul {
+    font-family: "MuseoSans-300";
+    font-size: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; }
+  .block-tarjetas-detalle li {
+    padding-left: 1em;
+    text-indent: -.7em;
+    color: color-grises(gris-nivel5);
+    float: left; }
+  .block-tarjetas-detalle li:before {
+    content: "• ";
+    color: color-primario(verde);
+    font-size: 1.5em; }
+  .block-tarjetas-detalle .container {
+    padding: 0 45px;
+    max-width: 1100px; }
+    .block-tarjetas-detalle .container .block-detalle-tarjetas h1 {
+      font-family: "MuseoSans-500";
+      font-size: 40px;
+      color: color-primario(verde-oscuro);
+      line-height: 30px;
+      text-align: center;
+      margin: 0 0 21px 0; }
+    .block-tarjetas-detalle .container .block-detalle-tarjetas h2 {
+      font-family: "MuseoSans-700";
+      font-size: 28px;
+      color: color-grises(gris-nivel4);
+      letter-spacing: 0;
+      text-align: center;
+      line-height: 35px;
+      margin: 0 0 20px; }
+    .block-tarjetas-detalle .container .block-detalle-tarjetas .box-tarjeta-detalle {
+      position: relative;
+      padding: 30px;
+      text-align: center; }
+      .block-tarjetas-detalle .container .block-detalle-tarjetas .box-tarjeta-detalle .block-beneficios-tarjeta {
+        padding: 0 30px; }
+        .block-tarjetas-detalle .container .block-detalle-tarjetas .box-tarjeta-detalle .block-beneficios-tarjeta img {
+          margin: 20px 0 0 0; }
+      .block-tarjetas-detalle .container .block-detalle-tarjetas .box-tarjeta-detalle h3 {
+        font-family: "MuseoSans-500";
+        font-size: 16px;
+        color: color-primario(verde-oscuro);
+        text-align: center;
+        line-height: 20px;
+        margin: 0; }
+        .block-tarjetas-detalle .container .block-detalle-tarjetas .box-tarjeta-detalle h3 span {
+          color: color-primario(verde);
+          display: block; }
+      .block-tarjetas-detalle .container .block-detalle-tarjetas .box-tarjeta-detalle p {
+        font-family: "MuseoSans-300";
+        font-size: 15px;
+        color: color-grises(gris-nivel5);
+        text-align: left; }
+      .block-tarjetas-detalle .container .block-detalle-tarjetas .box-tarjeta-detalle .separator:before {
+        content: '';
+        width: 1px;
+        height: 95%;
+        background: color-grises(gris-nivel2);
+        position: absolute;
+        top: 0;
+        left: 0; }
+      .block-tarjetas-detalle .container .block-detalle-tarjetas .box-tarjeta-detalle .img-tarjeta {
+        width: 395px; }
+      .block-tarjetas-detalle .container .block-detalle-tarjetas .box-tarjeta-detalle .btn {
+        font-family: "MuseoSans-700";
+        font-size: 27px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        -webkit-transform: translate(-50%, 50%);
+        -ms-transform: translate(-50%, 50%);
+        transform: translate(-50%, 50%);
+        width: 264px;
+        line-height: 59px; }
+    .block-tarjetas-detalle .container .block-detalle-tarjetas .requisitos {
+      width: 93.8181818%;
+      background: color-grises(gris-nivel1);
+      border: 0.93px solid color-box(borde);
+      border-radius: 5.55px;
+      margin: 0 auto 46px;
+      padding: 50px 50px 25px; }
+      .block-tarjetas-detalle .container .block-detalle-tarjetas .requisitos ul {
+        font-size: 15px;
+        overflow: hidden; }
+      .block-tarjetas-detalle .container .block-detalle-tarjetas .requisitos li {
+        width: 50%; }
+
+/*# sourceMappingURL=_tarjetas-detalle.css.map */

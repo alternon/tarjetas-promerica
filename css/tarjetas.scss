@@ -1,0 +1,859 @@
+$color-primario: (
+    verde-oscuro: #00693C,
+    verde: #69BE28,
+    verde-claro: rgba(105, 190, 40, 0.8)
+);
+
+$color-adicional: (
+    naranja: #FF5900,
+    rojo: #FC312B
+);
+
+$color-productos: (
+    azul-oscuro: #002C77,
+    azul: rgb(0, 8, 22),
+    amarillo: #FFA408,
+    azul-claro: #63CECA,
+    rosa: #EA5084,
+    verde-claro: #BED600,
+    morado: #80379b
+);
+
+$color-grises: (
+    negro: #000000,
+    gris-nivel6: #1E1E1E,
+    gris-nivel5: #4A4A4A,
+    gris-nivel4: #808080,
+    gris-nivel3: #AEAEAE,
+    gris-nivel2: #D8D8D8,
+    gris-nivel1: #FAFAFA,
+    blanco: #FFFFFF
+);
+
+$color-box: (
+  borde: #E6E6E6,
+  sombra: #DDDDDD
+);
+
+$screen-lg-min: 1200px;
+$screen-md-min: 992px;
+$screen-sm-min: 768px;
+
+@function color-primario($color) {
+    @return map-get($color-primario, $color);
+}
+
+@function color-adicional($color) {
+    @return map-get($color-adicional, $color);
+}
+
+@function color-productos($color) {
+    @return map-get($color-productos, $color);
+}
+
+@function color-grises($color) {
+  @return map-get($color-grises, $color);
+}
+
+@function color-box($color) {
+  @return map-get($color-box, $color);
+}
+
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+@include font-face("MuseoSans-300", "fonts/exljbris-MuseoSans-300");
+@include font-face("MuseoSans-500", "fonts/exljbris-MuseoSans-500");
+@include font-face("MuseoSans-700", "fonts/exljbris-MuseoSans-700");
+
+body {
+  background: color-grises(gris-nivel1) !important;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+  outline: none !important;
+  text-decoration: none;
+}
+
+.aligned-row {
+  display: flex;
+  flex-flow: row wrap;
+
+  &::before {
+    display: block;
+  }
+}
+
+.aligned-row-items {
+  align-items: center;
+}
+
+.block-tarjetas {
+  font-family: "MuseoSans-300";
+
+  .banner-tarjetas {
+    background: url(../img/banner-origami.png) repeat-x 0% 0% color-grises(blanco);
+    text-align: center;
+    -webkit-animation: slide 20s linear infinite;
+    animation: slide 20s linear infinite;
+    margin: 0;
+
+    img {
+      width: 100%;
+
+    }
+
+    @media (max-width: $screen-md-min) {
+      img {width: 250px;}
+    } 
+
+    h1 {
+      font-family: "MuseoSans-500";
+      font-size: 30px;
+      color: color-grises(gris-nivel4);
+      line-height: 43px;
+      
+      span {
+        font-family: "MuseoSans-700";
+        font-size: 40px;
+        color: color-primario(verde);
+        line-height: 36px;
+        display: block; 
+      }
+    }
+
+    @media (max-width: $screen-md-min) {
+      h1 {font-size: 25px;line-height: 31px;}
+      span {font-size: 30px;line-height: 31px;}
+    } 
+  
+  @media (max-width: $screen-md-min) {
+    .col-md-5:nth-of-type(1) { order: 2; }
+    .col-md-5:nth-of-type(2) { order: 1; }
+    } 
+  }
+
+  @media (max-width: $screen-md-min) {
+    .banner-tarjetas {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+  } 
+
+  .btn-default {
+    font-family: "MuseoSans-500";
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    line-height: 37px;
+    color: color-grises(blanco);
+    background-color: color-primario(verde);
+    outline: none;
+    min-width: 150px;
+    background-position: center;
+    transition: background 0.8s;
+    padding: 0;
+
+    &:hover {
+      background: color-primario(verde-claro) radial-gradient(circle, transparent 1%, color-primario(verde-claro) 1%) center/15000%;
+      color: color-grises(blanco);
+    }
+
+    &:active {
+      background-color: color-primario(verde-claro);
+      background-size: 100%;
+      transition: background 0s;
+      color: color-grises(blanco);
+
+      &:focus {
+        color: color-grises(blanco);
+      }
+      
+    }
+
+    &:focus {
+      color: color-grises(blanco);
+      background-color: color-primario(verde);
+      border-color: transparent;
+      outline: none;
+    }
+  }
+
+  .btn-link {
+    font-family: "MuseoSans-500";
+    font-size: 17px;
+    color: color-grises(gris-nivel4);
+    line-height: 24px;
+    outline: none;
+    padding: 0;
+    margin: 36px 0 0 0;
+
+    &:hover, &:focus {
+      text-decoration: none;
+      color: color-grises(gris-nivel4);
+    }
+  }
+
+  .box {
+    border: 1px solid color-box(borde);
+    box-shadow: 2px 5px 9px 0 color-box(sombra);
+    border-radius: 6px;
+    background: color-grises(blanco);
+  }
+
+  .box-descubre {
+    max-width: 903px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px auto 45px;
+    padding: 14px 55px;
+
+    p {
+      font-family: "MuseoSans-500";
+      font-size: 21px;
+      color: color-grises(gris-nivel4);
+      line-height: 25px;
+      margin: 0;
+
+      span {
+        font-family: "MuseoSans-700";
+        color: color-primario(verde);
+      }
+    }
+
+    .btn {
+      width: 248px;
+    }
+  }
+
+  @media (max-width: $screen-md-min) {
+    .box-descubre  {
+      flex-direction: column;
+      margin: 20px auto 45px;
+      max-width: 375px;
+
+      p { 
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        margin: 0 0 15px 0;
+      }
+
+      .btn {
+        width: 163px;
+        font-size: 1.25rem;
+      }
+      
+    }
+    
+  }
+
+
+  @media (max-width: $screen-sm-min) {
+    .box-descubre  {
+      margin: 20px auto 45px;
+      p { 
+        font-size: 13px;
+      }
+    }
+  }
+  
+  .block-filtro-tarjetas {
+
+    text-align: center;
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      margin: 40px 0 0;
+    }
+
+    .categoria {
+      font-family: "MuseoSans-500";
+      font-size: 20px;
+      color: #C0C4CA;
+      text-align: center;
+      transition: color 0.5s;
+      text-decoration: none;
+
+      &:hover {
+        color:color-primario(verde);
+        text-decoration: none;
+      }
+    }
+    .active .categoria {
+      color: color-primario(verde);
+    }
+
+    .btn-link {
+      font-family: "MuseoSans-500";
+      font-size: 30px;
+      color: color-grises(gris-nivel4);
+      line-height: 43px;
+      outline: none;
+      text-decoration: none;
+      padding: 0;
+
+      #txt-categoria {
+        color: color-primario(verde);
+      }
+
+      &:hover {
+        text-decoration: none;
+        outline: none;
+      }
+
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+
+  @media (max-width: $screen-md-min) {
+    .block-filtro-tarjetas {
+      .btn-link {
+        font-family: "MuseoSans-300";
+        margin-right: 45px;
+      
+        #txt-categoria {
+          font-family: "MuseoSans-500";
+          font-size: 20px;
+          display: block;
+        }
+        .icon-flecha {
+          top: 25%;
+          right: -35px;
+          transform: translate(0, -50%);
+        }
+      }
+    }
+  }
+
+  .box-tarjetas {
+    width: 307px;
+    height: 414px;
+    text-align: center;
+    margin: 130px auto 0;
+    position: relative;
+
+    .box-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 55px 25px 25px;
+
+      .box-info-txt {
+        overflow: hidden;
+        height: 235px;
+      }
+    }
+
+    .box-more-info {
+      display: none;
+    }
+    
+    .tarjeta {
+      position: absolute;
+      top: -76px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    h3 {
+      font-family: "MuseoSans-500";
+      font-size: 25px;
+      color: color-primario(verde-oscuro);
+      line-height: 31px;
+      margin: 31px 0 24px;
+    }
+
+    p {
+      font-family: "MuseoSans-500";
+      font-size: 14px;
+      color: color-grises(gris-nivel5);
+      line-height: 17px;
+    }
+
+    ul {
+      font-family: "MuseoSans-300";
+      font-size: 13px;
+      list-style: none;
+      padding:0;
+      margin:0;
+      text-align: left;
+    }
+  
+    li { 
+      padding-left: 1em; 
+      text-indent: -.7em;
+    }
+  
+    li:before {
+      content: "• ";
+      color: color-primario(verde);
+      font-size: 1.5em;
+    }
+  }
+  
+  .tag {
+    position: absolute;
+    z-index: 0;
+  }
+
+  .tag:before {
+    content: '';
+    width: 137px;
+    height: 137px;
+/*     clip-path: polygon(0 65%, 65% 0, 100% 0, 0 100%); */
+    position: absolute;
+    z-index: -1;
+  }
+
+  .tag:after {
+    content: attr(data-box-tag);
+    transform: rotate(-45deg) translate(-30%, 115%);
+    width: 137px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 8px 0;
+    font-size: 12px;
+    color: color-grises(blanco);
+    text-align: left;
+  }
+
+  .solicitada:before {
+/*     background: color-primario(verde); */
+    background: url(../img/banderinverdeclaro.png) 0 50% no-repeat;
+  }
+
+  .buscada:before {
+/*     background: color-primario(verde-oscuro); */
+    background: url(../img/banderinverdeoscuro.png) 0 50% no-repeat;
+  }
+
+  .nueva:before {
+/*     background: color-productos(rosa); */
+    background: url(../img/banderinrosa.png) 0 50% no-repeat;
+  }
+
+  .banner-descubre-tarjeta {
+    background: color-grises(blanco);
+
+    .container {
+      max-width: 1024px;
+    }
+    
+    .row {
+      background: url(../img/Banner1.png) no-repeat 50% 50% color-grises(negro);
+    }
+
+    h3 {
+      font-family: "MuseoSans-700";
+      font-size: 48.38px;
+      color: color-grises(blanco);
+      line-height: 58px;
+      text-shadow: 0 2px 5px color-grises(negro);
+
+      span {
+        display: block;
+        font-family: "MuseoSans-500";
+        font-size: 28.8px;
+        color: color-grises(blanco);
+        line-height: 58px;
+      }
+    }
+
+    .btn {
+      width: 240px;
+      line-height: 57px;
+      border-radius: 27px;
+    }
+
+/*     @media (max-width: $screen-md-min) {
+      h3 {
+        font-size: 30px;
+        line-height: 36px;
+        
+        span {
+          font-size: 15px;
+          line-height: 36px;
+        }
+      }
+    } */
+  }
+  
+  .block-mas-tarjetas {
+    text-align: center;
+    padding: 50px 0;
+
+    .icono-vermas-grande {
+      font-family: "MuseoSans-500";
+      font-size: 25px;
+      color: color-grises(gris-nivel4);
+      line-height: 30px;
+      margin: 0;
+    }
+  }
+
+  .block-promociones-footer {
+    font-family: "MuseoSans-500";
+    text-align: center;
+    font-size: 20px;
+    color: color-grises(gris-nivel4);
+    text-align: center;
+    line-height: 25px;
+
+    .box-promociones-footer {
+
+    }
+
+    h3 {
+      font-family: "MuseoSans-300";
+      font-size: 30px;
+      color: color-grises(gris-nivel4);
+      text-align: center;
+    }
+
+    .items-promociones {
+      position: relative;
+      margin: 150px 0 0 0;
+
+      &:before  {
+        content: '';
+        width: 1px;
+        height: 170px;
+        background: color-grises(gris-nivel2);
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(0,-150px);
+      }
+
+      &:last-child {
+        &:before  {
+          content: none;
+        }
+      }
+
+      &:nth-of-type(1) {
+        img {
+          width: 100px;
+        }
+      }
+
+      &:nth-of-type(2) {
+        img {
+          transform: translate(-50%, -170%);
+        }
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -120%);
+      }
+    }
+
+    .link {
+      font-family: "MuseoSans-700";
+      font-size: 23px;
+      color: color-primario(verde);
+      text-align: center;
+      line-height: 25px;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+@-webkit-keyframes slide {
+  from { background-position: 0 0; }
+  to { background-position: -358px 0; }
+}
+
+icono,
+.icono:before {
+    background: url(../img/svg/filtro/sprite.svg) no-repeat;
+}
+
+.icono {
+    position: relative;
+}
+
+.icono {
+  &::before {
+    content: "";
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.icono-puntos:before{width: 70px;height: 70px;background-size: 200%;background-position: -10%  -1.291512915129151%}
+.icono-puntos:hover:before, .active .icono-puntos:before{width: 70px;height: 70px;background-size: 200%;background-position: 90% -1.291512915129151%;animation: fade 0.5s;}
+
+.icono-cashback:before{width: 70px;height: 70px;background-size: 200%;background-position: -10% 12.9151291512915%}
+.icono-cashback:hover:before, .active .icono-cashback:before{width: 70px;height: 70px;background-size: 200%;background-position: 90% 12.9151291512915%;animation: fade 0.5s;}
+
+.icono-millas:before{width: 70px;height: 70px;background-size: 200%;background-position: -1.42857142857143% 27.8597786%}
+.icono-millas:hover:before, .active .icono-millas:before{width: 70px;height: 70px;background-size: 200%;background-position: 98.5714285714286% 27.8597786%;animation: fade 0.5s;}
+
+.icono-empresa:before{width: 70px;height: 70px;background-size: 200%;background-position: -10% 42%}
+.icono-empresa:hover:before, .active .icono-empresa:before{width: 70px;height: 70px;background-size: 200%;background-position: 90% 42%;animation: fade 0.5s;}
+
+.icono-promociones:before{width: 70px;height: 70px;background-size: 200%;background-position: -18.5714285714286% 57.5%}
+.icono-promociones:hover:before, .active .icono-promociones:before{width: 70px;height: 70px;background-size: 200%;background-position: 81.4285714285714% 57.5%;animation: fade 0.5s;}
+
+.icono-todas:before{width: 70px;height: 70px;background-size: 200%;background-position: -10%  71.5%}
+.icono-todas:hover:before, .active .icono-todas:before{width: 70px;height: 70px;background-size: 200%;background-position: 90% 71.5%;animation: fade 0.5s;}
+
+.icono-cerrar:before{width: 24px;height: 24px;background-position: -5% 75.09225092%}
+.icono-flecha:before{width: 24px;height: 14px;background-position: -5% 79.5202952%}
+.icono-flecha-atras:before{width: 24px;height: 24px;background-size: 600%;background-position: 0 88.35%}
+.icono-vermas:before{width: 24px;height: 24px;background-size: 600%;background-position: 0.2% 93%;float: right;margin: 0 0 0 10px;}
+.icono-vermas-grande:before{width: 30px;height: 30px;background-size: 450%;background-position: -0.4% 100.1%;float: right;margin: 0 0 0 10px;}
+
+@keyframes fade {
+  from {opacity: 0.5;}
+  to {opacity: 1;}
+}
+
+@keyframes sprite-forward {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: -720px 0px;
+  }
+}
+
+@keyframes sprite-backward {
+  from {
+    background-position: -720px 0px;
+  }
+  to {
+    background-position: 0px 0px;
+  }
+}
+
+
+.btn-filtro {
+  position: relative;
+
+  .icon-flecha {
+    background-image: url(../img/svg/icons/flecha-sprite.svg);
+    animation-duration: 400ms;
+    animation-timing-function: steps(30);
+    width: 24px;
+    height: 14px;
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -50%);
+    background-repeat: no-repeat;
+    animation-fill-mode: forwards;
+    animation-name: sprite-backward;
+  }
+
+}
+
+.collapsed .icon-flecha {
+  animation-name: sprite-forward;
+}
+
+.block-tarjetas-detalle {
+  background: color-grises(blanco);
+
+  .icono-flecha-atras {
+    font-family: "MuseoSans-700";
+    font-size: 14px;
+    color: color-primario(verde-oscuro);
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 24px;
+    text-decoration: underline;
+
+    &:hover {
+      color: color-primario(verde-oscuro);
+      text-decoration: underline;
+    }
+
+    &:before {
+      float: left;
+      margin: 0 8px 0 0;
+    }
+  }
+  
+  ul {
+    font-family: "MuseoSans-300";
+    font-size: 15px;
+    list-style: none;
+    padding:0;
+    margin:0;
+    text-align: left;
+  }
+  
+  li { 
+    padding-left: 1em; 
+    text-indent: -.7em;
+    color: color-grises(gris-nivel5);
+    float: left;
+  }
+  
+  li:before {
+    content: "• ";
+    color: color-primario(verde);
+    font-size: 1.5em;
+  }
+  
+  .container {
+    padding: 0 45px;
+
+    .block-detalle-tarjetas {
+
+      h1{
+        font-family: "MuseoSans-500";
+        font-size: 40px;
+        color: color-primario(verde-oscuro);
+        line-height: 30px;
+        text-align: center;
+        margin: 0 0 21px 0;
+      }
+  
+      h2 {
+        font-family: "MuseoSans-700";
+        font-size: 28px;
+        color: color-grises(gris-nivel4);
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 35px;
+        margin: 0 0 20px;
+      }
+
+      .box-tarjeta-detalle {
+        position: relative;
+        padding: 30px;
+        text-align: center;
+
+        .block-beneficios-tarjeta {
+          padding: 0 30px;
+
+          img {
+            margin: 20px 0 0 0;
+          }
+        }
+        
+        h3 {
+          font-family: "MuseoSans-500";
+          font-size: 16px;
+          color: color-primario(verde-oscuro);
+          text-align: center;
+          line-height: 20px;
+          margin: 0;
+
+          span {
+            color: color-primario(verde);
+            display: block;
+          }
+        }
+
+        p {
+          font-family: "MuseoSans-300";
+          font-size: 15px;
+          color: color-grises(gris-nivel5);
+          text-align: left;
+        }
+
+        .separator {
+          &:before {
+            content: '';
+            width: 1px;
+            height: 95%;
+            background: color-grises(gris-nivel2);
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+  
+        .img-tarjeta {
+          width: 395px;
+        }
+  
+        .btn {
+          font-family: "MuseoSans-700";
+          font-size: 27px;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%, 50%);
+          width: 264px;
+          line-height: 59px;
+        }
+  
+      }
+  
+      .requisitos{
+        width: 93.8181818%;
+        background: color-grises(gris-nivel1);
+        border: 0.93px solid color-box(borde);
+        border-radius: 5.55px;
+        margin: 0 auto 46px;
+        padding: 50px 50px 25px;
+
+        ul {
+          font-size: 15px;
+          overflow: hidden;
+        }
+        
+        li { 
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+

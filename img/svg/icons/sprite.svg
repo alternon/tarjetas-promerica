@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="116" fill="none">
+
+<defs>
+  <symbol id="cerrar">
+    <g stroke="#00693c" stroke-width="2.5" stroke-linejoin="round"><path d="M7.958 3.712h-9.1 9.1z" transform="matrix(.669131 .743145 .743145 -.669131 7.370555 11.659793)"/><path d="M7.958 3.712h-9.1 9.1z" transform="matrix(.669131 -.743145 -.743145 -.669131 12.887747 16.732023)"/></g><circle cx="12" cy="12" r="10" stroke="#00693c" stroke-width="2.5"/>
+  </symbol>
+
+  <symbol id="flecha">
+    <path d="M2.625 2.113l9.122 9.372 9.628-9.372" stroke="#69be28" stroke-width="3.552" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="flecha-atras">
+    <g stroke="#00693c" stroke-width="2.5"><path d="M8 12h8" stroke-linecap="round"/><g stroke-linejoin="round"><path d="M4.666 5.747h-4.1 4.1z" transform="matrix(.669131 .743145 .743145 -.669131 3.596338 15.644751)"/><path d="M4.666 1.747h-4.1 4.1z" transform="matrix(.669131 -.743145 -.743145 -.669131 9.165275 12.863287)"/></g></g><circle cx="12" cy="12" r="10" stroke="#00693c" stroke-width="2.5"/>
+  </symbol>
+
+  <symbol id="vermas">
+    <g stroke-width="2.5" stroke="#69be28"><path d="M11.545 9v6.907" stroke-linecap="round"/><path d="M15.1 12.453H8h7.1z" stroke-linejoin="round"/></g><circle cx="12" cy="12" r="10" stroke="#69be28" stroke-width="2.5"/>
+  </symbol>
+
+  <symbol id="vermas-grande">
+    <g stroke="#69be28" stroke-linecap="round" stroke-width="2.5"><path d="M14.77 9.222v11.093"/><path d="M20.315 14.77H9.222"/></g><circle cx="15" cy="15" r="13" stroke="#69be28" stroke-width="2.5"/>
+  </symbol>
+</defs>
+
+<use x="0" y="0" xlink:href="#cerrar"/>
+<use x="0" y="24" xlink:href="#flecha"/>
+<use x="0" y="38" xlink:href="#flecha-atras"/>
+<use x="0" y="62" xlink:href="#vermas"/>
+<use x="0" y="86" xlink:href="#vermas-grande"/>
+
+</svg>
